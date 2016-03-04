@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2009 The Android Open Source Project
+     Copyright (C) 2016 The Altair ROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,100 +18,87 @@
 <!-- Dialpad in the Phone app.
      Tall screen version with taller buttons.
  -->
+<com.android.phone.ButtonGridLayout android:layout_gravity="center_horizontal"
+                                    android:id="@+id/dialpad"
+                                    android:paddingLeft="7.0dip"
+                                    android:paddingTop="6.0dip"
+                                    android:paddingRight="7.0dip"
+                                    android:paddingBottom="6.0dip"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    xmlns:android="http://schemas.android.com/apk/res/android">
 
-<com.android.phone.ButtonGridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/dialpad"
-    android:paddingLeft="7dp"
-    android:paddingRight="7dp"
-    android:paddingTop="6dp"
-    android:paddingBottom="6dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:layout_weight="1"
->
-        <ImageButton android:id="@+id/one"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_1_no_vm"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/one"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_1_no_vm" />
 
-        <ImageButton android:id="@+id/two"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_2"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/two"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_2" />
 
-        <ImageButton android:id="@+id/three"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_3"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/three"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_3" />
 
-        <ImageButton android:id="@+id/four"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_4"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/four"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_4" />
 
-        <ImageButton android:id="@+id/five"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_5"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/five"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_5" />
 
-        <ImageButton android:id="@+id/six"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_6"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/six"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_6" />
 
-        <ImageButton android:id="@+id/seven"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_7"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/seven"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_7" />
 
-        <ImageButton android:id="@+id/eight"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_8"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/eight"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_8" />
 
-        <ImageButton android:id="@+id/nine"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_9"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/nine"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_9" />
 
-        <ImageButton android:id="@+id/star"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_star"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/star"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_star" />
 
-        <ImageButton android:id="@+id/zero"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_0"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/zero"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_0" />
 
-        <ImageButton android:id="@+id/pound"
-            android:layout_width="88dp"
-            android:layout_height="58dp"
-            android:src="@drawable/dial_num_pound"
-            android:background="@drawable/btn_dial"
-        />
+    <ImageButton android:id="@+id/pound"
+                 android:background="@drawable/btn_dial"
+                 android:layout_width="88.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/dial_num_pound" />
+
 </com.android.phone.ButtonGridLayout>
-

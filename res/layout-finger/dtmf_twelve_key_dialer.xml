@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2008 The Android Open Source Project
+     Copyright (C) 2016 The Altair ROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,94 +25,88 @@
      See non_drawer_dialpad.xml for the corresponding layout file
      for devices that *do* use an InCallTouchUi widget.
      -->
-<SlidingDrawer
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/dialer_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:topOffset="5dp"
-    android:bottomOffset="7dp"
-    android:handle="@+id/dialer_tab"
-    android:content="@+id/dtmf_dialer"
-    android:allowSingleTap="false"
-    android:visibility="gone"
-    >
+<SlidingDrawer android:id="@+id/dialer_container"
+               android:visibility="gone"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:bottomOffset="7.0dip"
+               android:topOffset="5.0dip"
+               android:allowSingleTap="false"
+               android:handle="@+id/dialer_tab"
+               android:content="@+id/dtmf_dialer"
+               xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Drawer handle -->
-    <LinearLayout
-        android:id="@id/dialer_tab"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:focusable="true"
-        >
-        <ImageView
-            android:layout_width="1dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:duplicateParentState="true"
-            android:src="@drawable/tray_handle_strip"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dtmfDialpadHandleLabel"
-            android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textStyle="bold"
-            android:shadowDy="1"
-            android:shadowRadius="0.9"
-            android:shadowColor="#ffffffff"
-            android:duplicateParentState="true"
-            android:background="@drawable/tray_handle_tab"/>
-        <ImageView
-            android:layout_width="1dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@drawable/tray_handle_strip"
-            android:duplicateParentState="true"
-            />
+    <LinearLayout android:gravity="bottom"
+                  android:orientation="horizontal"
+                  android:id="@+id/dialer_tab"
+                  android:focusable="true"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <ImageView android:duplicateParentState="true"
+                   android:layout_width="1.0dip"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/tray_handle_strip"
+                   android:scaleType="fitXY"
+                   android:layout_weight="1.0" />
+
+        <Button android:textAppearance="?android:textAppearanceSmall"
+                android:textStyle="bold"
+                android:background="@drawable/tray_handle_tab"
+                android:duplicateParentState="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dtmfDialpadHandleLabel"
+                android:singleLine="true"
+                android:shadowColor="#ffffffff"
+                android:shadowDy="1.0"
+                android:shadowRadius="0.9" />
+
+        <ImageView android:duplicateParentState="true"
+                   android:layout_width="1.0dip"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/tray_handle_strip"
+                   android:scaleType="fitXY"
+                   android:layout_weight="1.0" />
+
     </LinearLayout>
 
     <!-- drawer content dialer view -->
-    <com.android.phone.DTMFTwelveKeyDialerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/dtmf_dialer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="1dip"
-        android:background="@color/dtmf_dialer_background">
+    <com.android.phone.DTMFTwelveKeyDialerView android:orientation="vertical"
+                                               android:id="@+id/dtmf_dialer"
+                                               android:background="@color/dtmf_dialer_background"
+                                               android:layout_width="fill_parent"
+                                               android:layout_height="fill_parent"
+                                               android:layout_marginTop="1.0dip"
+                                               xmlns:android="http://schemas.android.com/apk/res/android">
 
         <!-- Number Display Field, padded for correct text alignment -->
-        <EditText android:id="@+id/dtmfDialerField"
-            android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="6dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:paddingRight="16dp"
-            android:paddingLeft="16dp"
-            android:maxLines="1"
-            android:scrollHorizontally="true"
-            android:textSize="28sp"
-            android:freezesText="true"
-            android:background="@drawable/btn_dial_textfield_normal_full"
-            android:textColor="@color/dtmf_dialer_display_text"
-            android:focusableInTouchMode="false"
-            android:clickable="false"/>
+        <EditText android:textSize="28.0sp"
+                  android:textColor="@color/dtmf_dialer_display_text"
+                  android:id="@+id/dtmfDialerField"
+                  android:background="@drawable/btn_dial_textfield_normal_full"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:focusableInTouchMode="false"
+                  android:clickable="false"
+                  android:layout_width="fill_parent"
+                  android:layout_height="66.0dip"
+                  android:layout_marginLeft="3.0dip"
+                  android:layout_marginTop="14.0dip"
+                  android:layout_marginRight="3.0dip"
+                  android:layout_marginBottom="6.0dip"
+                  android:maxLines="1"
+                  android:scrollHorizontally="true"
+                  android:freezesText="true" />
 
         <!-- Keypad section -->
         <include layout="@layout/dialpad" />
 
         <!-- Dummy element to pad below the dialpad -->
-        <View android:layout_height="1dp"
-            android:layout_width="match_parent"
-            android:layout_weight="1"/>
+        <View android:layout_width="fill_parent"
+              android:layout_height="1.0dip"
+              android:layout_weight="1.0" />
 
     </com.android.phone.DTMFTwelveKeyDialerView>
 

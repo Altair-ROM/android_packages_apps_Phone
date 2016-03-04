@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2009 The Android Open Source Project
+     Copyright (C) 2016 The Altair ROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -28,50 +29,50 @@
      The enclosing LinearLayout has a layout_weight of 1 which controls
      how much the remaining free space will be placed below the torpedo.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/voicemailAndDialAndDelete"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:layout_weight="1"
-    android:paddingTop="18dip"
-    android:orientation="horizontal">
+<LinearLayout android:layout_gravity="center_horizontal"
+              android:orientation="horizontal"
+              android:id="@+id/voicemailAndDialAndDelete"
+              android:paddingTop="18.0dip"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_weight="1.0"
+              xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Onscreen "Voicemail" button. The background is hardcoded to
          disable and the foreground has been dimmed down to 30%.  The
          width is 75 (from the mocks) + 12 of padding from the 9patch,
          total is 87.
     -->
-    <ImageButton android:id="@+id/voicemailButton"
-        android:layout_width="87dip"
-        android:layout_height="58dip"
-        android:layout_gravity="center_vertical|top"
-        android:state_enabled="false"
-        android:background="@drawable/btn_dial_action_left_disable"
-        android:tint="#ff555555"
-        android:src="@drawable/ic_dial_action_voice_mail" />
+    <ImageButton android:state_enabled="false"
+                 android:layout_gravity="top"
+                 android:id="@+id/voicemailButton"
+                 android:background="@drawable/btn_dial_action_left_disable"
+                 android:layout_width="87.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/ic_dial_action_voice_mail"
+                 android:tint="#ff555555" />
 
     <!-- Onscreen "Dial" button, used on all platforms by
          default. Its usage can be disabled using resources (see
          config.xml.) -->
-    <ImageButton android:id="@+id/dialButton"
-        android:layout_width="116dip"
-        android:layout_height="58dip"
-        android:layout_gravity="center_vertical|top"
-        android:state_enabled="false"
-        android:background="@drawable/btn_dial_action"
-        android:src="@drawable/ic_dial_action_call" />
+    <ImageButton android:state_enabled="false"
+                 android:layout_gravity="top"
+                 android:id="@+id/dialButton"
+                 android:background="@drawable/btn_dial_action"
+                 android:layout_width="116.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/ic_dial_action_call" />
 
     <!-- Onscreen "Backspace/Delete" button
          The width is 75 (from the mocks) + 12 of padding from the
          9patch, total is 87.
     -->
-    <ImageButton android:id="@+id/deleteButton"
-        android:layout_width="87dip"
-        android:layout_height="58dip"
-        android:layout_gravity="center_vertical|top"
-        android:state_enabled="false"
-        android:background="@drawable/btn_dial_delete"
-        android:src="@drawable/ic_dial_action_delete" />
-</LinearLayout>
+    <ImageButton android:state_enabled="false"
+                 android:layout_gravity="top"
+                 android:id="@+id/deleteButton"
+                 android:background="@drawable/btn_dial_delete"
+                 android:layout_width="87.0dip"
+                 android:layout_height="58.0dip"
+                 android:src="@drawable/ic_dial_action_delete" />
 
+</LinearLayout>

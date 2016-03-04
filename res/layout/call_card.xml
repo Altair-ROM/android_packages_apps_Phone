@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2007 The Android Open Source Project
+     Copyright (C) 2016 The Altair ROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,10 +20,9 @@
      child is the LinearLayout found here.  (In the CallCard constructor,
      we inflate this file and add it as a child.)
      TODO: consider just <include>ing this directly from incall_screen.xml? -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+<RelativeLayout android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Info about the "secondary" call, displayed at the upper right of
          the screen.  (If you're on a call with both lines in use, this
@@ -30,63 +30,58 @@
 
          This block of info needs to be Z-ordered underneath the
          primaryCallInfo block, so it's the first child listed here. -->
-    <LinearLayout android:id="@+id/secondaryCallInfo"
+    <LinearLayout android:gravity="center_horizontal"
                   android:orientation="vertical"
-                  android:layout_width="160dp"
+                  android:id="@+id/secondaryCallInfo"
+                  android:layout_width="160.0dip"
                   android:layout_height="wrap_content"
-                  android:gravity="center_horizontal"
+                  android:layout_marginTop="6.0dip"
                   android:layout_alignParentTop="true"
-                  android:layout_alignParentRight="true"
-                  android:layout_marginTop="6dp"
-                  >
-        <TextView android:id="@+id/secondaryCallStatus"
-              android:text="@string/onHold"
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:textSize="14sp"
-              android:singleLine="true"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              />
+                  android:layout_alignParentRight="true">
 
-        <TextView android:id="@+id/secondaryCallName"
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:textSize="14sp"
-              android:singleLine="true"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginTop="-2dip"
-              />
+        <TextView android:textAppearance="?android:textAppearanceMedium"
+                  android:textSize="14.0sp"
+                  android:id="@+id/secondaryCallStatus"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/onHold"
+                  android:singleLine="true" />
+
+        <TextView android:textAppearance="?android:textAppearanceMedium"
+                  android:textSize="14.0sp"
+                  android:id="@+id/secondaryCallName"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="-2.0dip"
+                  android:singleLine="true" />
 
         <!-- Scaled-down photo, or else a generic placeholder image. -->
         <ImageView android:id="@+id/secondaryCallPhoto"
-            android:layout_width="106dp"
-            android:layout_height="101dp"
-            android:layout_marginTop="-6dip"
-            android:background="@drawable/incall_photo_border_med"
-            android:contentDescription="@string/onHold"
-            />
+                   android:background="@drawable/incall_photo_border_med"
+                   android:layout_width="106.0dip"
+                   android:layout_height="101.0dip"
+                   android:layout_marginTop="-6.0dip"
+                   android:contentDescription="@string/onHold" />
+
     </LinearLayout>
 
     <!-- The main block of info about the "primary" or "active" call -->
-    <LinearLayout
-        android:id="@+id/primaryCallInfo"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="8dip"
-        >
+    <LinearLayout android:gravity="center_horizontal"
+                  android:orientation="vertical"
+                  android:id="@+id/primaryCallInfo"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="8.0dip"
+                  android:layout_alignParentTop="true">
 
         <!-- "Upper title" at the very top of the CallCard. -->
-        <TextView android:id="@+id/upperTitle"
-                  android:textAppearance="?android:attr/textAppearanceLarge"
-                  android:textSize="28sp"
+        <TextView android:textAppearance="?android:textAppearanceLarge"
+                  android:textSize="28.0sp"
                   android:gravity="center_horizontal"
+                  android:id="@+id/upperTitle"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:layout_marginBottom="10dip"
-                  />
+                  android:layout_marginBottom="10.0dip" />
 
         <!-- "Person info": photo / name / number -->
         <include layout="@layout/call_card_person_info" />
@@ -97,17 +92,16 @@
          This is only ever shown on devices that actually have a
          menu while in-call, i.e. it's never shown on devices where the
          InCallTouchUi is enabled (see InCallScreen.updateMenuButtonHint().) -->
-    <TextView android:id="@+id/menuButtonHint"
-              android:text="@string/menuButtonHint"
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:textSize="18sp"
-              android:textColor="?android:attr/textColorSecondary"
+    <TextView android:textAppearance="?android:textAppearanceMedium"
+              android:textSize="18.0sp"
+              android:textColor="?android:textColorSecondary"
+              android:id="@+id/menuButtonHint"
+              android:visibility="gone"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_below="@id/primaryCallInfo"
-              android:layout_marginTop="22dip"
-              android:layout_centerHorizontal="true"
-              android:visibility="gone"
-              />
+              android:layout_marginTop="22.0dip"
+              android:text="@string/menuButtonHint"
+              android:layout_below="@+id/primaryCallInfo"
+              android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
